@@ -7,19 +7,19 @@ python manage.py runserver 5577
    
 pip install django djangorestframework
   
-3. Создадим новый проект Django:
+2. Создадим новый проект Django:
    
 django-admin startproject notesRest
    
-6. Перейдем в созданный каталог
+3. Перейдем в созданный каталог
    
 cd notesRest
 
-8. Создадим приложение
+4. Создадим приложение
    
 python manage.py startapp api
 
-10. Добавим приложение и REST Framework в файл settings.py
+5. Добавим приложение и REST Framework в файл settings.py
     
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
-12. Откроем файл api/models.py и создадим модель Note:
+6. Откроем файл api/models.py и создадим модель Note:
     
 from django.db import models
 
@@ -49,7 +49,7 @@ class Note(models.Model):
 python manage.py makemigrations
 python manage.py migrate
 
-9. Создадим сериализатор, который будет испольоваться для преобразования данных в формат JSON
+8. Создадим сериализатор, который будет испольоваться для преобразования данных в формат JSON
    Создадим файл api/serializers.py и добавим следующий код:
    
 from rest_framework import serializers
