@@ -158,3 +158,7 @@ class NotesViewSet(ModelViewSet):
         note.delete()
         return Response({}, status=204)
 ```
+Для программы по тестированию производительности необходимо сначала установить библиотеку request
+```
+pip install request
+```
