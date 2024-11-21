@@ -21,7 +21,7 @@ python manage.py startapp api
 
 5. Добавим приложение и REST Framework в файл settings.py
     
-`INSTALLED_APPS = [
+«`INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -30,7 +30,7 @@ python manage.py startapp api
     'django.contrib.staticfiles',
     'api.apps.ApiConfig',
     'rest_framework',
-]`
+]«`
 
 6. Откроем файл api/models.py и создадим модель Note:
     
