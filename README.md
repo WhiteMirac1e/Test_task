@@ -1,17 +1,27 @@
 Создание rest Сервера на DRF
 Для запуска сервера на определенном порту необходимо дать команду, где 5577 - номер порта
-   python manage.py runserver 5577
+
+python manage.py runserver 5577
 
 1. Установим Django и Django REST Framework:
-  pip install django djangorestframework
-2. Создадим новый проект Django:
-   django-admin startproject notesRest
-3. Перейдем в созданный каталог
-   cd notesRest
-4. Создадим приложение
-   python manage.py startapp api
-5. Добавим приложение и REST Framework в файл settings.py
-  INSTALLED_APPS = [
+   
+pip install django djangorestframework
+  
+3. Создадим новый проект Django:
+   
+django-admin startproject notesRest
+   
+6. Перейдем в созданный каталог
+   
+cd notesRest
+
+8. Создадим приложение
+   
+python manage.py startapp api
+
+10. Добавим приложение и REST Framework в файл settings.py
+    
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -21,8 +31,10 @@
     'api.apps.ApiConfig',
     'rest_framework',
 ]
-6. Откроем файл api/models.py и создадим модель Note:
-   from django.db import models
+
+12. Откроем файл api/models.py и создадим модель Note:
+    
+from django.db import models
 
 
 class Note(models.Model):
@@ -33,11 +45,14 @@ class Note(models.Model):
     def __str__(self):
         return self.note
 7. Проведем миграции
-   python manage.py makemigrations
-   python manage.py migrate
-8. Создадим сериализатор, который будет испольоваться для преобразования данных в формат JSON
+   
+python manage.py makemigrations
+python manage.py migrate
+
+9. Создадим сериализатор, который будет испольоваться для преобразования данных в формат JSON
    Создадим файл api/serializers.py и добавим следующий код:
-   from rest_framework import serializers
+   
+from rest_framework import serializers
 from .models import Note
 
 
@@ -53,6 +68,7 @@ class NoteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Note
         fields = ("id", "note")
+        
 9. Создадим представления 
 Откроем файл api/views.py и добавим следующие представления:
 
